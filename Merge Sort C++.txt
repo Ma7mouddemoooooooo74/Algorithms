@@ -1,0 +1,48 @@
+/**
+ *    author: Mahmoud Abdeldayem
+**/
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+// el 2 arrays already sorted
+void mergeSort(int arr1[] ,int s1, int arr2[] ,int s2 ,int finalArray[],int i,int j,int k){ // parameter s is the size of every array
+if(i<s1 && j<s2){
+ if(arr1[i]<arr2[j]){
+    finalArray[k]=arr1[i];
+    i++;
+ }
+ else{
+   finalArray[k]=arr2[j];
+   j++;
+ }
+ k++;
+ mergeSort(arr1,s1,arr2,s2,finalArray,i,j,k);
+}
+else{
+ while(i<s1){
+    finalArray[k] = arr1[i];
+    i++;
+    k++;
+  }
+  while(j<s2){
+    finalArray[k] = arr2[j];
+    j++;
+    k++;
+  }
+ }
+}
+
+int main()
+ {
+ int ar1[]={100,112,256,349,770};
+ int ar2[]={72,86,119,265,445,892};
+ int s1 = sizeof(ar1)/sizeof(ar1[0]);
+ int s2 = sizeof(ar2)/sizeof(ar2[0]);
+ int finalar[s1+s2];
+
+ int k = 7; // the position that will be printed
+ mergeSort(ar1,s1,ar2,s2,finalar,0,0,0);
+
+ cout<<finalar[k-1]; // because the array is 0 indexed
+return 0;
+  }

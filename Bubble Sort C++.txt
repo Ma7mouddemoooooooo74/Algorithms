@@ -1,0 +1,41 @@
+/**
+ *    author: Mahmoud Abdeldayem
+**/
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+
+void bubbleSort(int a[] , int n){
+ bool flag = true;
+ for(int i=0;i<n-1;i++){
+   for(int j=0;j<n-i-1;j++){
+    if(a[j]>a[j+1]){
+        swap(a[j+1],a[j]);
+        flag=false;
+    }
+   }
+   if(flag==true){
+        break;
+    }
+ }
+}
+
+int main()
+ {
+ int a[]={2,3,6,7,9};
+ int b[]={1,4,8,10};
+ int k=5;
+ int s1 = sizeof(a)/sizeof(a[0]);
+ int s2 = sizeof(b)/sizeof(b[0]);
+ ll tot = s1 + s2; // the tot size of the final array
+ int finalarray[tot];
+ for(int i=0;i<s1;i++){
+   finalarray[i]=a[i];
+ }
+ for(int i=s1;i<tot;i++){
+   finalarray[i]=b[i-s1];
+ }
+ bubbleSort(finalarray,tot);
+ cout<<finalarray[k-1] ; // because the array is 0 indexed
+return 0;
+  }
