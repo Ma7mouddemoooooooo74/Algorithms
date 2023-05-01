@@ -1,0 +1,26 @@
+nonRecursive( arr1 , size1 ,arr2 ,size2 , finalArr) :
+
+int i=0,j=0,k=0 
+ while i<size1 && j<size2
+    if arr1[i]<arr2[j]
+     finalArr[k] = arr1[i]
+     i++
+     k++
+
+    else
+      finalArr[k] = arr2[j]
+      j++
+      k++
+  
+   
+  while i<size1
+     finalArr[k] = arr1[i]
+     i++
+     k++
+     
+  while j<size2
+     finalArr[k] = arr2[ij]
+     j++
+     k++
+ 
+end   

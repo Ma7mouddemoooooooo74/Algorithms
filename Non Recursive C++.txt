@@ -1,0 +1,52 @@
+/**
+ *    author: Mahmoud Abdeldayem
+**/
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+// el 2 arrays already sorted
+void nonRecusize(int arr1[] , int s1 ,int arr2 [] ,int s2 , int finalArr []){
+ int i=0 ,j=0 ,k=0;
+ while(i<s1 && j<s2){
+   if(arr1[i]<arr2[j]){
+     finalArr[k]=arr1[i];
+     i++;
+     k++;
+   }
+   else{
+    finalArr[k]=arr2[j];
+     j++;
+     k++;
+   }
+ }
+ while(i<s1){
+    finalArr[k]=arr1[i];
+    i++;
+    k++;
+ }
+ while(j<s2){
+    finalArr[k]=arr2[j];
+    j++;
+    k++;
+ }
+}
+
+void fast(){
+ios::sync_with_stdio(0);
+cin.tie(0);
+}
+
+int main()
+ {
+fast();
+int a[] = {2,3,6,7,9};
+int b[] = {1,4,8,10};
+int s1 = sizeof(a)/sizeof(a[0]);
+int s2 = sizeof(b)/sizeof(b[0]);
+int f[s1+s2];
+nonRecusize(a,s1,b,s2,f);
+
+int k=5;
+cout<<f[k-1];
+return 0;
+  }
