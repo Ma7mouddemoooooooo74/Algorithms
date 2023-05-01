@@ -1,0 +1,26 @@
+mergeSort( arr1 , size1 ,arr2 ,size2 , finalArr ,i , j, k) :
+ 
+ if i<size1 && j<size2
+   if arr1[i]<arr2[j]
+    finalArr[k] = arr1[i]
+    i++
+ 
+   else
+     finalArr[k] = arr2[j]
+     j++
+
+   k++
+   mergeSort( arr1 , size1 ,arr2 ,size2 , finalArr ,i , j, k)
+  
+ else
+    while i<size1
+      finalArr[k] = arr1[i]
+      i++
+      k++
+     
+   while j<size2
+      finalArr[k] = arr2[ij]
+      j++
+      k++
+ 
+end   
